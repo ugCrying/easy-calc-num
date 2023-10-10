@@ -1,0 +1,12 @@
+{
+  "name": "easy-calc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test"
+  },
+  "author": "Mug",
+  "type": "module",
+  "license": "ISC"
+}
