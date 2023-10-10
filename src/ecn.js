@@ -1,3 +1,3 @@
 export class Ec {
-  name = 'Ec'
+  name = 'Ecn'
 }
