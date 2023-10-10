@@ -1,6 +1,6 @@
 {
   "name": "easy-calc-num",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,8 @@
   },
   "author": "Mug",
   "type": "module",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^9.1.2"
+  }
 }
