@@ -1,9 +1,8 @@
 import { Ecn, numToStr } from '../index.js'
 
-// const ecn = new Ecn('8102840238273921739.9182739812738912793')
-// const ecn = new Ecn(1e33)
+const ecn1 = new Ecn(3.12321e18, 18)
+const ecn2 = new Ecn(6e18, 18)
+const ecn3 = ecn1.mult(ecn2)
+// const ecn3 = ecn1.mult(6)
 
-console.log('t', new Ecn(1e33))
-console.log('t', new Ecn(1e33).toLocaleString())
-console.log('t', new Ecn(1231231312312321121312131n))
-console.log('t', new Ecn('123213.1234567890'))
+console.log('t', ecn3)
