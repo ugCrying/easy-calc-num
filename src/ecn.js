@@ -34,14 +34,31 @@ export class Ecn {
     return this.number.toLocaleString()
   }
   /**
-   * Multiplied
    * @param {String|Number|Ecn} num
    */
-  mult(val) {
+  mul(val) {
     if (!(val instanceof Ecn)) val = new Ecn(val)
     return new Ecn(this.realBn.multipliedBy(val.realBn))
   }
-  div(params) {}
-  plus(params) {}
-  minus(params) {}
+  /**
+   * @param {String|Number|Ecn} num
+   */
+  div(val) {
+    if (!(val instanceof Ecn)) val = new Ecn(val)
+    return new Ecn(this.realBn.dividedBy(val.realBn))
+  }
+  /**
+   * @param {String|Number|Ecn} num
+   */
+  plus(val) {
+    if (!(val instanceof Ecn)) val = new Ecn(val)
+    return new Ecn(this.realBn.plus(val.realBn))
+  }
+  /**
+   * @param {String|Number|Ecn} num
+   */
+  minus(val) {
+    if (!(val instanceof Ecn)) val = new Ecn(val)
+    return new Ecn(this.realBn.minus(val.realBn))
+  }
 }
