@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js'
 export class Ecn {
   /**
    * Easily Calculate Number Class
-   * @param {String || Number || BigInt} originVal 原始值
+   * @param {String || Number || BigInt || BigNumber} originVal 原始值
    * @param {String || Number || BigInt} decimals 精度
    */
   constructor(value, decimals = 0) {
@@ -37,9 +37,9 @@ export class Ecn {
    * Multiplied
    * @param {String|Number|Ecn} num
    */
-  mult(num) {
-    if (!(num instanceof Ecn)) num = new Ecn(num)
-    return new Ecn(this.realBn.multipliedBy(num.realBn).toString())
+  mult(val) {
+    if (!(val instanceof Ecn)) val = new Ecn(val)
+    return new Ecn(this.realBn.multipliedBy(val.realBn))
   }
   div(params) {}
   plus(params) {}
