@@ -1,33 +1,31 @@
 import { numToStr } from './utils.js'
-import BigNumber from 'bignumber.js'
 export class Ecn {
   /**
    * Easily Calculate Number Class
-   * @param {String || Number || BigInt || BigNumber} originVal 原始值
+   * @param {String || Number || BigInt } originVal 原始值
    * @param {String || Number || BigInt} decimals 精度
    */
   constructor(value, decimals = 0) {
     decimals = Number(decimals)
-
-    // 原始值解析
-    const num = Number(value)
-    const str = numToStr(value)
-    const bi = typeof value === 'bigint' ? value : BigInt(parseInt(num))
-    const bn = new BigNumber(str)
+    let str = numToStr(value)
+    // 若是小数则转换为整数
+    if (str.includes('.')) {
+      const d = str.length - 1 - str.indexOf('.')
+      decimals += d
+      str = numToStr(Number(str.replace('.', '')))
+    }
+    const num = Number(str)
+    const bi = BigInt(str)
     this.origin = {
       decimals,
-      value,
       num,
       str,
       bi,
-      bn,
     }
 
     // 真实值解析
-    this.realBn = bn.dividedBy(BigInt(Math.pow(10, decimals)))
-    this.string = numToStr(this.realBn.toString(), 19)
-    this.number = Number(this.string)
-    this.bigint = BigInt(parseInt(this.string))
+    this.number = num / Math.pow(10, decimals)
+    this.string = numToStr(this.number)
   }
   // 千分位展示
   toLocaleString() {
@@ -38,27 +36,33 @@ export class Ecn {
    */
   mul(val) {
     if (!(val instanceof Ecn)) val = new Ecn(val)
-    return new Ecn(this.realBn.multipliedBy(val.realBn))
+    return new Ecn(
+      this.origin.bi * val.origin.bi,
+      this.origin.decimals + val.origin.decimals
+    )
   }
   /**
    * @param {String|Number|Ecn} num
    */
   div(val) {
     if (!(val instanceof Ecn)) val = new Ecn(val)
-    return new Ecn(this.realBn.dividedBy(val.realBn))
+    return new Ecn(
+      this.origin.bi / val.origin.bi,
+      this.origin.decimals - val.origin.decimals
+    )
   }
   /**
    * @param {String|Number|Ecn} num
    */
   plus(val) {
-    if (!(val instanceof Ecn)) val = new Ecn(val)
-    return new Ecn(this.realBn.plus(val.realBn))
+    // if (!(val instanceof Ecn)) val = new Ecn(val)
+    // return new Ecn(this.realBn.plus(val.realBn))
   }
   /**
    * @param {String|Number|Ecn} num
    */
   minus(val) {
-    if (!(val instanceof Ecn)) val = new Ecn(val)
-    return new Ecn(this.realBn.minus(val.realBn))
+    // if (!(val instanceof Ecn)) val = new Ecn(val)
+    // return new Ecn(this.realBn.minus(val.realBn))
   }
 }

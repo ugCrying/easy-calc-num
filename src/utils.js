@@ -1,5 +1,3 @@
-import BigNumber from 'bignumber.js'
-
 // 获得补位的0和小数点
 function padZero(num) {
   let str = ''
@@ -17,8 +15,7 @@ function padZero(num) {
  * @return {String}
  */
 export const numToStr = (val, decimals) => {
-  if (val instanceof BigNumber) val = val.toString()
-  else val = String(val)
+  val = String(val)
   let result = ''
 
   if (!val.includes('e')) {
@@ -59,7 +56,6 @@ export const numToStr = (val, decimals) => {
     for (let i = partOfDecimal.length - 1; i >= 0; i--) {
       if (partOfDecimal[partOfDecimal.length - 1] === '0') {
         partOfDecimal = partOfDecimal.substring(0, i)
-        // partOfDecimal = partOfDecimal.substring(0, i - 1)
       }
     }
     result = partOfinteger + partOfDecimal

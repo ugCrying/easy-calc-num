@@ -1,16 +1,27 @@
 import { Ecn } from '../index.js'
 
-const ecn1 = new Ecn(11, 1)
-const ecn2 = new Ecn(1.3)
+// const ecn1 = new Ecn(11, 1)
+// const ecn2 = new Ecn(1.3)
 
-const ecn3 = ecn1.mul(ecn2)
+// const ecn3 = ecn1.mul(ecn2)
 // console.log('t1', ecn3)
 
-const ecn4 = ecn2.div(ecn1)
+// const ecn4 = ecn2.div(ecn1)
 // console.log('t2', ecn4)
 
-const ecn5 = ecn2.plus(ecn1)
-console.log('t3', ecn5)
+// const ecn5 = ecn2.plus(ecn1)
+// console.log('t3', ecn5)
 
-const ecn6 = ecn2.minus(ecn1)
+// const ecn6 = ecn2.minus(ecn1)
 // console.log('t3', ecn6)
+
+// const ecn7 = new Ecn(2e18, 18)
+// const ecn8 = new Ecn(1.23, 18)
+// console.log('ecn8', ecn8)
+// console.log(ecn7.mul(ecn8))
+
+// const ecn9 = new Ecn(1.5208069041e-26, 2)
+// console.log('ecn9', ecn9)
+// console.log('ecn9', ecn9.mul(1e40))
+
+console.log('t', new Ecn(1.1e2, 18))
