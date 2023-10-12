@@ -1,4 +1,11 @@
 import { numToStr } from './utils.js'
+// import BigNumber from 'bignumber.js'
+
+// console.log(
+//   'BigNumber',
+//   new BigNumber('100000000000000001').dividedBy(new BigNumber(10))
+// )
+
 export class Ecn {
   /**
    * Easily Calculate Number Class
@@ -23,7 +30,7 @@ export class Ecn {
       bi,
     }
 
-    // 真实值解析
+    // 真实值解析  --此处会产生精度问题
     this.number = num / Math.pow(10, decimals)
     this.string = numToStr(this.number)
   }
@@ -32,7 +39,6 @@ export class Ecn {
     return this.number.toLocaleString()
   }
   /**
-   * @param {String|Number|Ecn} num
    */
   mul(val) {
     if (!(val instanceof Ecn)) val = new Ecn(val)
@@ -42,7 +48,6 @@ export class Ecn {
     )
   }
   /**
-   * @param {String|Number|Ecn} num
    */
   div(val) {
     if (!(val instanceof Ecn)) val = new Ecn(val)
@@ -52,17 +57,45 @@ export class Ecn {
     )
   }
   /**
-   * @param {String|Number|Ecn} num
    */
   plus(val) {
-    // if (!(val instanceof Ecn)) val = new Ecn(val)
-    // return new Ecn(this.realBn.plus(val.realBn))
+    if (!(val instanceof Ecn)) val = new Ecn(val)
+    const [d1, d2] = [this.origin.decimals, val.origin.decimals]
+    if (d1 !== d2) {
+      if (d1 > d2) {
+        return new Ecn(
+          this.origin.bi + val.origin.bi * BigInt(Math.pow(10, d1 - d2)),
+          d1
+        )
+      } else {
+        return new Ecn(
+          this.origin.bi * BigInt(Math.pow(10, d2 - d1)) + val.origin.bi,
+          d2
+        )
+      }
+    } else {
+      return new Ecn(this.origin.bi + val.origin.bi, d1)
+    }
   }
   /**
-   * @param {String|Number|Ecn} num
    */
   minus(val) {
-    // if (!(val instanceof Ecn)) val = new Ecn(val)
-    // return new Ecn(this.realBn.minus(val.realBn))
+    if (!(val instanceof Ecn)) val = new Ecn(val)
+    const [d1, d2] = [this.origin.decimals, val.origin.decimals]
+    if (d1 !== d2) {
+      if (d1 > d2) {
+        return new Ecn(
+          this.origin.bi - val.origin.bi * BigInt(Math.pow(10, d1 - d2)),
+          d1
+        )
+      } else {
+        return new Ecn(
+          this.origin.bi * BigInt(Math.pow(10, d2 - d1)) - val.origin.bi,
+          d2
+        )
+      }
+    } else {
+      return new Ecn(this.origin.bi - val.origin.bi, d1)
+    }
   }
 }

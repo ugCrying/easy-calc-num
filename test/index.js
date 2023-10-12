@@ -24,4 +24,13 @@ import { Ecn } from '../index.js'
 // console.log('ecn9', ecn9)
 // console.log('ecn9', ecn9.mul(1e40))
 
-console.log('t', new Ecn(1.1e2, 18))
+// console.log('t', new Ecn(1.1e2, 18))
+
+// console.log('t', new Ecn(1.1).plus(new Ecn(1.3)))
+// console.log('t', new Ecn(1.3).minus(new Ecn(1.1)))
+// console.log('t', new Ecn(10, 6).plus(new Ecn(50, 6)))
+// console.log('t', new Ecn(10, 6).minus(new Ecn(50, 6)))
+
+// console.log('t', new Ecn(1).minus(new Ecn(1,18)))
+console.log('t', new Ecn(1e18, 18).plus(new Ecn(1, 18)))
+// console.log('t', new Ecn(1e18,18).minus(new Ecn(1,18)))
