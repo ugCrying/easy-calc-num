@@ -34,6 +34,10 @@ export class Ecn {
     this.number = num / Math.pow(10, decimals)
     this.string = numToStr(this.number)
   }
+  // 输出字符串
+  toString() {
+    return this.string
+  }
   // 千分位展示
   toLocaleString() {
     return this.number.toLocaleString()

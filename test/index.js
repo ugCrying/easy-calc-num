@@ -34,5 +34,7 @@ import { Ecn } from '../index.js'
 // console.log('t', new Ecn(1).minus(new Ecn(1,18)))
 // console.log('t', new Ecn(1e18, 18).plus(new Ecn(1, 18)))
 // console.log('t', new Ecn(1e18,18).minus(new Ecn(1,18)))
-console.log(new Ecn(123456.7e-3).minus(new Ecn(50,3)))
+// console.log(new Ecn(123456.7e-3).minus(new Ecn(50,3)))
 // console.log(new Ecn(11, 1))
+
+// console.log(new Ecn(123, 0).toString)
