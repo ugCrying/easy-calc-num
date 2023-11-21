@@ -38,3 +38,6 @@ import { Ecn } from '../index.js'
 // console.log(new Ecn(11, 1))
 
 // console.log(new Ecn(123, 0).toString)
+
+// console.log(new Ecn(1, 32).plus(new Ecn(1, 18)))
+console.log(new Ecn(1, 18).minus(new Ecn(1, 32)))

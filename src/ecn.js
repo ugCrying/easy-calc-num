@@ -1,10 +1,4 @@
 import { numToStr } from './utils.js'
-// import BigNumber from 'bignumber.js'
-
-// console.log(
-//   'BigNumber',
-//   new BigNumber('100000000000000001').dividedBy(new BigNumber(10))
-// )
 
 export class Ecn {
   /**
@@ -21,8 +15,8 @@ export class Ecn {
       decimals += d
       str = numToStr(Number(str.replace('.', '')))
     }
-    const num = Number(str)
     const bi = BigInt(str)
+    const num = Number(str)
     this.origin = {
       decimals,
       num,
@@ -68,12 +62,14 @@ export class Ecn {
     if (d1 !== d2) {
       if (d1 > d2) {
         return new Ecn(
-          this.origin.bi + val.origin.bi * BigInt(Math.pow(10, d1 - d2)),
+          this.origin.bi +
+            val.origin.bi * BigInt(numToStr(Math.pow(10, d1 - d2))),
           d1
         )
       } else {
         return new Ecn(
-          this.origin.bi * BigInt(Math.pow(10, d2 - d1)) + val.origin.bi,
+          this.origin.bi * BigInt(numToStr(Math.pow(10, d2 - d1))) +
+            val.origin.bi,
           d2
         )
       }
@@ -89,12 +85,14 @@ export class Ecn {
     if (d1 !== d2) {
       if (d1 > d2) {
         return new Ecn(
-          this.origin.bi - val.origin.bi * BigInt(Math.pow(10, d1 - d2)),
+          this.origin.bi -
+            val.origin.bi * BigInt(numToStr(Math.pow(10, d1 - d2))),
           d1
         )
       } else {
         return new Ecn(
-          this.origin.bi * BigInt(Math.pow(10, d2 - d1)) - val.origin.bi,
+          this.origin.bi * BigInt(numToStr(Math.pow(10, d2 - d1))) -
+            val.origin.bi,
           d2
         )
       }
