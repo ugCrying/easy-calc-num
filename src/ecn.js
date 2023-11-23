@@ -15,6 +15,7 @@ export class Ecn {
       decimals += d
       str = numToStr(Number(str.replace('.', '')))
     }
+    if (str === 'NaN') str = '0'
     const bi = BigInt(str)
     const num = Number(str)
     this.origin = {
