@@ -28,7 +28,7 @@ export class Ecn {
     // 真实值解析  --此处会产生精度问题
     this.number = num / Math.pow(10, decimals)
     this.string = numToStr(this.number)
-    this.int = parseInt(this.number)
+    this.intStr = numToStr(parseInt(this.number))
   }
   // 输出字符串
   toString() {
