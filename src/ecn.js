@@ -28,7 +28,6 @@ export class Ecn {
     // 真实值解析  --此处会产生精度问题
     this.number = num / Math.pow(10, decimals)
     this.string = numToStr(this.number)
-    this.intStr = numToStr(parseInt(this.number))
   }
   // 输出字符串
   toString() {
@@ -37,6 +36,10 @@ export class Ecn {
   // 千分位展示
   toLocaleString() {
     return this.number.toLocaleString()
+  }
+  // 转为字符串类型的整数
+  toIntStr() {
+    return this.numToStr(parseInt(this.number))
   }
   /**
    */
