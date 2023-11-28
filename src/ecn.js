@@ -39,7 +39,7 @@ export class Ecn {
   }
   // 转为字符串类型的整数
   toIntStr() {
-    return this.numToStr(parseInt(this.number))
+    return numToStr(parseInt(this.number))
   }
   /**
    */
