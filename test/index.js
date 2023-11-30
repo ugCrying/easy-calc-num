@@ -1,5 +1,4 @@
-import { Ecn } from '../index.js'
-
+import { Ecn, numToStr, scaleNum } from '../index.js'
 // const ecn1 = new Ecn(11, 1)
 // const ecn2 = new Ecn(1.3)
 
@@ -40,4 +39,9 @@ import { Ecn } from '../index.js'
 // console.log(new Ecn(123, 0).toString)
 
 // console.log(new Ecn(1, 32).plus(new Ecn(1, 18)))
-console.log(new Ecn(1, 18).minus(new Ecn(1, 32)))
+// console.log(new Ecn(1, 18).minus(new Ecn(1, 32)))
+
+// console.log(scaleNum(123.456000, -20))
+// console.log(scaleNum('-00123.012300', 1))
+
+console.log(new Ecn('-0.1', -20))

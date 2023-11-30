@@ -1,4 +1,4 @@
-import { numToStr } from './utils.js'
+import { numToStr, scaleNum } from './utils.js'
 
 export class Ecn {
   /**
@@ -25,8 +25,10 @@ export class Ecn {
       bi,
     }
 
-    // 真实值解析  --此处会产生精度问题
-    this.number = num / Math.pow(10, decimals)
+    // 真实值解析
+    // this.number = num / Math.pow(10, decimals) // 此处会产生精度问题
+    this.number = scaleNum(num, -decimals) // 修复精度问题
+
     this.string = numToStr(this.number)
   }
   // 输出字符串
