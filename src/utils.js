@@ -82,7 +82,6 @@ export function numToStr(val, decimals) {
 
     if (parseFloat(val) < 0) result = '-' + result // 负数
 
-    // console.log('val:', val, ' 缩放倍数:', zoomFactor, ' 整数部分：', partOfInt, ' 小数部分:', partOfDecimal, ' 输出:', result);
   }
   // 小数位控制
   if (result.includes('.')) {
@@ -95,7 +94,6 @@ export function numToStr(val, decimals) {
   }
 
   result = removeExcessZero(result) // 优化:去掉头部多余的0
-  // console.log('输入:', val, ' 输出:', result);
   return result
 }
 
@@ -134,6 +132,5 @@ export function scaleNum(num, decimals) {
   }
   num = removeExcessZero(num)
   if (isNegative) num = '-' + num
-  console.log('tt', num)
   return num
 }
