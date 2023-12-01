@@ -17,19 +17,17 @@ export class Ecn {
     }
     if (str === 'NaN') str = '0'
     const bi = BigInt(str)
-    const num = Number(str)
     this.origin = {
       decimals,
-      num,
+      num: Number(str),
       str,
       bi,
     }
 
     // 真实值解析
     // this.number = num / Math.pow(10, decimals) // 此处会产生精度问题
-    this.number = scaleNum(num, -decimals) // 修复精度问题
-
-    this.string = numToStr(this.number)
+    this.string = scaleNum(str, -decimals) // 修复精度问题
+    this.number = Number(this.string)
   }
   // 输出字符串
   toString() {

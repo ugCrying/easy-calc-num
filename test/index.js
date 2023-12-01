@@ -44,4 +44,5 @@ import { Ecn, numToStr, scaleNum } from '../index.js'
 // console.log(scaleNum(123.456000, -20))
 // console.log(scaleNum('-00123.012300', 1))
 
-console.log(new Ecn('-0.1', -20))
+console.log(new Ecn(-20.123, -20))
+console.log(new Ecn(-20.123, 20))

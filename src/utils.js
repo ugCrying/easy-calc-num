@@ -91,8 +91,6 @@ export function numToStr(val, decimals) {
     if (decimals !== undefined && partOfDecimal.length > decimals) {
       partOfDecimal = partOfDecimal.substring(0, decimals) // 截取前decimalLength位
     }
-    console.log('partOfinteger', partOfinteger)
-    console.log('partOfDecimal', partOfDecimal)
     result = partOfinteger + partOfDecimal
   }
 
