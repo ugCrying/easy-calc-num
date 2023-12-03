@@ -41,6 +41,11 @@ export class Ecn {
   toIntStr() {
     return numToStr(parseInt(this.number))
   }
+  // 保留小数位
+  keepDecimals(decimals = 2) {
+    return numToStr(this.string, decimals)
+  }
+
   /**
    */
   mul(val) {
