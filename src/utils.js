@@ -1,4 +1,4 @@
-// 获得补位的0和小数点
+//  获得补位的0和小数点
 function padZero(num) {
   let str = ''
   for (let i = 1; i < Math.abs(num); i++) {
