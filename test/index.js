@@ -47,3 +47,9 @@ import { Ecn, numToStr, scaleNum } from '../index.js'
 // console.log(new Ecn(-20.123, -20))
 // console.log(new Ecn(-20.123).keepDecimals(2))
 
+// const e1 = Ecn.of(100, 1)
+// console.log('e1', e1)
+// const t = e1.map(string => {
+//   return string * 2
+// })
+// console.log(t)

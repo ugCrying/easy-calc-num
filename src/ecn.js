@@ -26,8 +26,17 @@ export class Ecn {
 
     // 真实值解析
     // this.number = num / Math.pow(10, decimals) // 此处会产生精度问题
-    this.string = scaleNum(str, -decimals) // 修复精度问题
+    this.string = scaleNum(str, -decimals) // 可修复精度问题
     this.number = Number(this.string)
+  }
+
+  // 生成容器
+  static of(value, decimals) {
+    return new Ecn(value, decimals)
+  }
+  // 映射
+  map(callback) {
+    return new Ecn(callback(this.string))
   }
   // 输出字符串
   toString() {
