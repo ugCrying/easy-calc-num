@@ -8,16 +8,12 @@
   "license": "ISC",
   "scripts": {
     "test": "node ./test",
-    "build": "webpack --mode production"
+    "build": "rollup index.js --file dist/ecn.min.js --format umd --name 'EcnModule'"
   },
-  "dependencies": {
-    "webpack": "^5.89.0"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/ugCrying/easy-calc-num.git"
   },
-  "devDependencies": {
-    "webpack-cli": "^5.1.4"
-  }
+  "devDependencies": {}
 }
