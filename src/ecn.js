@@ -1,5 +1,5 @@
 import { numToStr, scaleNum } from './utils.js'
-
+import Big from 'big.js'
 export class Ecn {
   /**
    * Easily Calculate Number Class
@@ -69,7 +69,7 @@ export class Ecn {
   div(val) {
     if (!(val instanceof Ecn)) val = new Ecn(val)
     return new Ecn(
-      this.origin.bi / val.origin.bi,
+      new Big(this.origin.str).div(val.origin.str),
       this.origin.decimals - val.origin.decimals
     )
   }
@@ -82,13 +82,13 @@ export class Ecn {
       if (d1 > d2) {
         return new Ecn(
           this.origin.bi +
-            val.origin.bi * BigInt(numToStr(Math.pow(10, d1 - d2))),
+          val.origin.bi * BigInt(numToStr(Math.pow(10, d1 - d2))),
           d1
         )
       } else {
         return new Ecn(
           this.origin.bi * BigInt(numToStr(Math.pow(10, d2 - d1))) +
-            val.origin.bi,
+          val.origin.bi,
           d2
         )
       }
@@ -105,13 +105,13 @@ export class Ecn {
       if (d1 > d2) {
         return new Ecn(
           this.origin.bi -
-            val.origin.bi * BigInt(numToStr(Math.pow(10, d1 - d2))),
+          val.origin.bi * BigInt(numToStr(Math.pow(10, d1 - d2))),
           d1
         )
       } else {
         return new Ecn(
           this.origin.bi * BigInt(numToStr(Math.pow(10, d2 - d1))) -
-            val.origin.bi,
+          val.origin.bi,
           d2
         )
       }

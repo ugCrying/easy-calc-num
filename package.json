@@ -1,6 +1,6 @@
 {
   "name": "easy-calc-num",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "",
   "main": "index.js",
   "author": "Mug",
@@ -10,10 +10,15 @@
     "test": "node ./test",
     "build": "rollup index.js --file dist/ecn.min.js --format umd --name 'EcnModule'"
   },
-  "dependencies": {},
+  "dependencies": {
+    "big.js": "^6.2.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ugCrying/easy-calc-num.git"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4"
+  }
 }
