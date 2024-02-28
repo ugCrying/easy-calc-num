@@ -42,3 +42,10 @@ or
 ```
 node test
 ```
+
+
+## Build
+
+```
+rollup -c
+```
