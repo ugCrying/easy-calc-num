@@ -1,5 +1,5 @@
-import { Ecn, numToStr, scaleNum } from '../index.js'
-import Big from 'big.js'
+import { Ecn, numToStr, scaleNum } from "../index.js";
+// import Big from 'big.js'
 // const ecn1 = new Ecn(11, 1)
 // const ecn2 = new Ecn(1.3)
 
@@ -58,3 +58,5 @@ import Big from 'big.js'
 // console.log(new Ecn(0.005).mul(2).div(4e18))
 // console.log(new Big('331231231232.131312313').div('2734739.472397497'))
 // console.log('331231231232.131312313' / '2734739.472397497')
+
+// console.log(new Ecn(123).toPer());
