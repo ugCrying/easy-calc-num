@@ -60,3 +60,4 @@ import { Ecn, numToStr, scaleNum } from "../index.js";
 // console.log('331231231232.131312313' / '2734739.472397497')
 
 // console.log(new Ecn(123).toPer());
+console.log(new Ecn('0E-8'))
