@@ -49,7 +49,7 @@ function removeExcessZero(num) {
  * @return {String}
  */
 export function numToStr(val, decimals) {
-  val = String(val)
+  val = String(val).toLocaleLowerCase()
 
   let result = ''
 
