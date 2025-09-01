@@ -54,7 +54,7 @@ export function numToStr(val, decimals) {
 
   if (val === "NaN") {
     result = "0";
-  } else if (val.startsWith("0E-")) {
+  } else if (val.includes("E-")) {
     result = "0";
   } else if (!val.includes("e")) {
     result = val;
