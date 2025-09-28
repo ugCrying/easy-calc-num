@@ -137,6 +137,6 @@ export function scaleNum(num, decimals) {
   return num;
 }
 
-export const ecn = (val) =>{
-  return new Ecn(val)
-}
+export const ecn = (val = 0, decimals = 0) => {
+  return new Ecn(val, decimals);
+};
