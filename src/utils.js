@@ -1,3 +1,5 @@
+import { Ecn } from "./ecn.js";
+
 //  获得补位的0和小数点
 function padZero(num) {
   let str = "";
@@ -133,4 +135,8 @@ export function scaleNum(num, decimals) {
   num = removeExcessZero(num);
   if (isNegative) num = "-" + num;
   return num;
+}
+
+export const ecn = (val) =>{
+  return new Ecn(val)
 }

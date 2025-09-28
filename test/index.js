@@ -1,4 +1,5 @@
 import { Ecn, numToStr, scaleNum } from "../index.js";
+import { ecn } from "../src/utils.js";
 // import Big from 'big.js'
 // const ecn1 = new Ecn(11, 1)
 // const ecn2 = new Ecn(1.3)
@@ -60,4 +61,5 @@ import { Ecn, numToStr, scaleNum } from "../index.js";
 // console.log('331231231232.131312313' / '2734739.472397497')
 
 // console.log(new Ecn(123).toPer());
-console.log(new Ecn('2E-8'))
+// console.log(new Ecn('2E-8'))
+console.log(ecn(123))
