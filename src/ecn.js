@@ -46,7 +46,7 @@ export class Ecn {
   // 千分位展示
   toLocaleString(decimals = 2) {
     return this.number.toLocaleString(undefined, {
-      minimumFractionDigits: decimals,
+      minimumFractionDigits: 0,
       maximumFractionDigits: decimals,
     });
   }
