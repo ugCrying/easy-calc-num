@@ -44,8 +44,11 @@ export class Ecn {
     return this.string;
   }
   // 千分位展示
-  toLocaleString() {
-    return this.number.toLocaleString();
+  toLocaleString(decimals = 2) {
+    return this.number.toLocaleString(undefined, {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
   }
   // 转为字符串类型的整数
   toIntStr() {
